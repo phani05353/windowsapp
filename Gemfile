@@ -10,6 +10,10 @@ gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views' 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+
+gem 'haml', '~>4.0.5'
+gem 'simple_form','~>3.0.2'
+gem 'bootstrap-sass','~>3.2.0.2'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
