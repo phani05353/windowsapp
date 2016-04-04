@@ -45,15 +45,26 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand">My App</a>
+        <a class="navbar-brand">My Workout Logger</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Sci-Fi Blog", "http://phani05353.herokuapp.com/"%></li>
-            <li><%= link_to "Financetracker","http://phanifinanceapp.herokuapp.com/"%></li>
-            <li><%= link_to "Photo Cloud","http://phaniphotoapp.herokuapp.com/"  %></li>
-			<li><%= link_to "Succession","http://succesion.herokuapp.com/"  %></li>
-			<li><%= link_to "Our Apps",windows_path%>
-			
+            <li><%= link_to "New Workout", new_workout_path, class:"navbar navbar-link" %></li>
+            
+          </ul>
+		  <ul class="nav navbar-right col-md-4">
+                <% if current_user %>
+                <li class="col-md-8 user-name btn btn-primary">
+                      <%= current_user.email
+                                       %></li>
+                <li class="col-md-1"> </li>
+                <li class="col-md-3 logout"><%= link_to('Logout', destroy_user_session_path,
+                         class: 'btn btn-xs btn-danger', title: 'Logout', :method => :delete) %></li>
+                    <% else %>
+                <li class="col-md-4 pull-right">
+                <%= link_to('Sign In', new_user_session_path, class: 'btn btn-primary', title: 'Sign In') %>
+                </li>
+                   <% end %>
+
           </ul>
         </div>
       </div>
