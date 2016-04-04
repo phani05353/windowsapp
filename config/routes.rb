@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :workouts do
 	resources :exercises
   end
+  resources:windows,except:[:create, :edit,:show,:update,:destroy,:index]
   root 'workouts#index'
 end
